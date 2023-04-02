@@ -12,6 +12,16 @@ export default function SingleContent({
 }) {
   return (
     <div className="media">
+      {vote_average > 7 ? (
+        <span className="vote" style={{ background: "blue" }}>
+          {vote_average}
+        </span>
+      ) : (
+        <span className="vote" style={{ background: "red" }}>
+          {vote_average}
+        </span>
+      )}
+
       <img
         className="poster"
         src={poster ? `${img_300}/${poster}` : unavailable}

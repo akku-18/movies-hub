@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    scroll-behavior: smooth;
+}
+
 .app{
     min-height: 100vh;
     background-color: #2c2b5b;
@@ -11,7 +15,7 @@
 
 .container{
     margin: auto;
-    width: 80%;
+    width: 70%;
 }
 
 .page-title{
@@ -24,8 +28,17 @@
     color: white;
 }
 
+@media (max-width: 1000px) {
+    .page-title {
+      font-size: 6.4vw;
+    }
+  }
+
 @media (max-width: 767px) {
     .app{
-        padding-top: 50px;
+        padding-top: 60px;
+    }
+    .container{
+        width: 80%;
     }
 }

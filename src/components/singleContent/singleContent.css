@@ -8,12 +8,12 @@
     flex-direction: column;
     width: 200px;
     padding: 5px;
-    margin: 5px 0;
+    margin: 10px 0;
     background-color: #282c34;
     border-radius: 10px;
     position: relative;
     font-family: "Montserrat", sans-serif;
-    
+    cursor: pointer;
   }
 
   
@@ -21,10 +21,28 @@
     background-color: white;
     color: black;
   }
+
+  .vote{
+    position: absolute;
+    right: 5px;
+    top: -5px;
+    background-color: rgb(84, 0, 163);
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 500;
+  }
   
   @media (max-width: 550px) {
     .media {
       width: 46%;
+    }
+    .title {
+      font-size: 10px;
+    }
+    .subTitle{
+      font-size: 11px;
     }
   }
   
