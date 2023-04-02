@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SingleContent from "../../components/singleContent/SingleContent";
+import "./trending.css";
 
 export default function Trending() {
   const [content, setContent] = useState([]);
