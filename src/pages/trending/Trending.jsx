@@ -2,28 +2,35 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SingleContent from "../../components/singleContent/SingleContent";
 import "./trending.css";
+import Pagination from "../../components/pagination/Pagination";
 
 export default function Trending() {
   const [content, setContent] = useState([]);
+  const [currPage, setcurrPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(10); 
 
   const fetchTrending = async () => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`
     );
-    
+
     setContent(data.results);
   };
 
   useEffect(() => {
-    fetchTrending();
+    fetchTrending(); // eslint-disable-next-line
   }, []);
+
+  const lastPostIndex = currPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = content.slice(firstPostIndex, lastPostIndex);
 
   return (
     <div>
       <span className="page-title">Trending</span>
       <div className="trending">
         {content &&
-          content?.map((c) => {
+          currentPosts?.map((c) => {
             return (
               <SingleContent
                 key={c.id}
@@ -37,6 +44,12 @@ export default function Trending() {
             );
           })}
       </div>
+      <Pagination
+        totalPosts={content.length}
+        postsPerPage={postsPerPage}
+        setCurrentPage={setcurrPage}
+        currPage={currPage}
+      />
     </div>
   );
 }
