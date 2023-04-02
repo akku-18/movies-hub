@@ -8,8 +8,13 @@
     padding-bottom: 70px;
 }
 
+.container{
+    position: absolute;
+    left: 10%;
+}
+
 @media (max-width: 767px) {
     .app{
-        padding-top: 70px;
+        padding-top: 50px;
     }
 }

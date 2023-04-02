@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import "../navbar/navbar.css";
+import "./navbar.css";
+import { FlipProvider, useFlip } from "react-easy-flip";
+import { Link } from "react-router-dom";
 
 const tabs = [
   {
-    id: "trending",
+    id: "/",
     text: "Trending",
   },
   {
@@ -12,8 +14,8 @@ const tabs = [
   },
 
   {
-    id: "tv series",
-    text: "TV series",
+    id: "series",
+    text: "Series",
   },
   {
     id: "search",
@@ -21,36 +23,45 @@ const tabs = [
   },
 ];
 
-let selected = true;
-
 export default function MainNav() {
-  const [selectedTab, setSelectedTab] = useState("trending");
+  const [selectedTab, setSelectedTab] = useState("/");
 
   const selectedTabHandler = (id) => {
     setSelectedTab(id);
   };
 
-  return (
-    <div className="main">
-      <div className="flex">
-        {tabs?.map((item, index) => {
-          return (
-            <div
-              onClick={() => selectedTabHandler(item.id)}
-              className="flex-col"
-              key={index}
-            >
-              {item.text}
+  const flipRootId = "flipRoot";
 
-              {selectedTab === item.id ? (
-                <div className="active-tab" />
-              ) : (
-                <div className="non-active-tab" />
-              )}
-            </div>
-          );
-        })}
+  const animationOption = {
+    duration: 500,
+  };
+
+  useFlip(flipRootId, animationOption);
+
+  return (
+    <FlipProvider>
+      <div className="main" data-flip-root-id={flipRootId}>
+        <div className="flex">
+          {tabs?.map((item, index) => {
+            return (
+              <div
+                onClick={() => selectedTabHandler(item.id)}
+                className="flex-col"
+                key={index}
+              >
+                <div className="nav-tag">
+                  <Link to={item.id}>{item.text}</Link>
+                </div> 
+                {selectedTab === item.id ? (
+                  <div className="active-tab" data-flip-id="highlight"></div>
+                ) : (
+                  <div className="non-active-tab" />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </FlipProvider>
   );
 }
