@@ -6,11 +6,16 @@ export default function Pagination({
   postsPerPage,
   setCurrentPage,
   currPage,
+  setPostsPerPage,
 }) {
   let pages = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pages.push(i);
+  }
+
+  const handleClick = () => {
+    window.scroll(0,0)
   }
 
   return (
@@ -20,7 +25,7 @@ export default function Pagination({
           return (
             <button
               key={index}
-              onClick={() => setCurrentPage(page)}
+              onClick={() => {setCurrentPage(page); handleClick()} }
               className={page === currPage ? "Active" : ""}
             >
               {page}

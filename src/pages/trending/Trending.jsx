@@ -7,7 +7,7 @@ import Pagination from "../../components/pagination/Pagination";
 export default function Trending() {
   const [content, setContent] = useState([]);
   const [currPage, setcurrPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10); 
+  const [postsPerPage, setPostsPerPage] = useState(6); 
 
   const fetchTrending = async () => {
     const { data } = await axios.get(
@@ -28,6 +28,7 @@ export default function Trending() {
   return (
     <div>
       <span className="page-title">Trending</span>
+      <span className="current-page">{currPage}.</span>
       <div className="trending">
         {content &&
           currentPosts?.map((c) => {
@@ -49,6 +50,7 @@ export default function Trending() {
         postsPerPage={postsPerPage}
         setCurrentPage={setcurrPage}
         currPage={currPage}
+        setPostsPerPage={setPostsPerPage}
       />
     </div>
   );

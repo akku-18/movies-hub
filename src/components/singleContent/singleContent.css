@@ -6,14 +6,18 @@
 .media {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 300px;
     padding: 5px;
-    margin: 10px 0;
+    margin: 30px 0;
     background-color: #282c34;
     border-radius: 10px;
     position: relative;
     font-family: "Montserrat", sans-serif;
     cursor: pointer;
+  }
+
+  .title, .subTitle {
+    font-size: 16px;
   }
 
   
@@ -30,7 +34,7 @@
     color: white;
     border-radius: 20px;
     padding: 5px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
   }
   
