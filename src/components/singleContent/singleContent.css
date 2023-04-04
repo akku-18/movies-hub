@@ -38,18 +38,6 @@
     font-weight: 500;
   }
   
-  @media (max-width: 550px) {
-    .media {
-      width: 46%;
-    }
-    .title {
-      font-size: 10px;
-    }
-    .subTitle{
-      font-size: 11px;
-    }
-  }
-  
   .poster {
     border-radius: 10px;
   }
@@ -69,4 +57,24 @@
     padding: 0 2px;
     padding-bottom: 3px;
     font-weight: 300;
+  }
+
+  .vote{
+    font-size: 14px;
+  }
+
+
+  @media (max-width: 550px) {
+    .media {
+      width: 46%;
+    }
+    .title {
+      font-size: 13px;
+    }
+    .subTitle{
+      font-size: 11px;
+    }
+    .vote{
+      font-size: 10px;
+    }
   }

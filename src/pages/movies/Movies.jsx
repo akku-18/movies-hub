@@ -3,33 +3,44 @@ import axios from "axios";
 import SingleContent from "../../components/singleContent/SingleContent";
 import Pagination from "../../components/pagination/Pagination";
 import "./movies.css";
+import Genres from "../../components/genres/Genres";
+import useGenre from "../../hooks/useGenres";
 
 export default function Movies() {
-
   const [content, setContent] = useState([]);
   const [currPage, setcurrPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(6); 
+  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [genres, setGenres] = useState([]);
+
+  const genreforURL = useGenre(selectedGenres);
 
   const fetchMovies = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=${genreforURL}`
     );
 
-    setContent(data.results)
+    setContent(data.results);
   };
 
   useEffect(() => {
     fetchMovies(); // eslint-disable-next-line
-  }, []);
+  }, [genreforURL]);
 
   const lastPostIndex = currPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = content.slice(firstPostIndex, lastPostIndex);
 
-
   return (
     <div>
-      <span className="page-title">Movies</span>
+      <span className="page-title">Discover Movies</span>
+      <Genres
+        type="movie"
+        selectedGenres={selectedGenres}
+        setSelectedGenres={setSelectedGenres}
+        genres={genres}
+        setGenres={setGenres}
+      />
       <span className="current-page">{currPage}.</span>
       <div className="movies">
         {content &&

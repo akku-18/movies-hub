@@ -31,11 +31,14 @@
 
 .current-page{
     display: flex;
+    /* position: absolute;
+    top: 220px; */
     width: 20px;
     justify-content: center;
     font-weight: 600;
     font-size: 16px;
-    margin: 0 10px;
+    margin: 10px 10px;
+    margin-top: 30px;
     border-radius: 6px;
     border-style:outset;
     cursor: pointer;
@@ -49,6 +52,9 @@
 @media (max-width: 1000px) {
     .page-title {
       font-size: 6.4vw;
+    }
+    .current-page{
+        display: none;
     }
   }
 

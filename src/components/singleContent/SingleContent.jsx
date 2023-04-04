@@ -13,7 +13,7 @@ export default function SingleContent({
   
   return (
     <div className="media">
-      {vote_average > 7 ? (
+      {vote_average > 6.5 ? (
         <span className="vote" style={{ background: "blue" }}>
           {Math.round(vote_average * 10) / 10}
         </span>

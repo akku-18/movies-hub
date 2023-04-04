@@ -1,0 +1,11 @@
+.series{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width: 900px){
+    .series {
+        column-gap: 0;
+    }
+}
