@@ -15,15 +15,17 @@ function App() {
         <MainNav />
         <div className="container">
           <Routes>
-            <Route path="/" element={<Trending/>}  exact/>
-            <Route path="/movies" element={<Movies/>} />
-            <Route path="/search" element={<Search/>} />
-            <Route path="/series" element={<Series/>} />
-
+            <Route path="/" element={<Trending />} exact />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/series" element={<Series />} />
           </Routes>
+          <div className="footer">
+            <span className="copyright">&copy; Akshansh Garg</span>
+          </div>
         </div>
       </div>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

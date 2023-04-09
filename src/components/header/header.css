@@ -1,10 +1,10 @@
-.header {
+.header  {
     width: 100%;
     cursor: pointer;
     position: fixed;
     display: flex;
-    justify-content: center;
-    text-transform: uppercase;
+    justify-content:space-between;
+    align-items: center;
     background-color: #272d45;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 4vw;
@@ -13,6 +13,35 @@
     box-shadow: 0px 1px 5px black;
     color: white;
     z-index: 100;
+  }
+
+  .left{
+    margin-left: 20px;
+  }
+
+  .auth-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 150px; */
+  }
+
+  .name{
+    font-size: 1vw;
+    margin-left: 10px;
+  }
+
+  #username{
+    font-size: 1.1vw;
+  }
+
+ .left-emofi{
+  width: 60px;
+
+ }
+  .main-title{
+    font-size:4vw;
+    margin-left: -70px;
   }
   
   @media (max-width: 1000px) {

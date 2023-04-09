@@ -57,7 +57,7 @@ export default function Search() {
               />
             );
           })}
-          {searchText && content.length == 0 && ( <h2>No Movies Found</h2>) }
+          {searchText && content.length === 0 && ( <h2>No Movies Found</h2>) }
       </div>
       <Pagination
         totalPosts={content.length}

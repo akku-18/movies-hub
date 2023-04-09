@@ -2,22 +2,22 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import "./genres.css";
 
-function Chip({name, onClick}) {
-  return (
-    <div>
-        <button className='single-chip' onClick={onClick}>{name}</button>
-    </div>
-  )
-}
+// function Chip({name, onClick}) {
+//   return (
+//     <div>
+//         <button className='single-chip' onClick={onClick}>{name}</button>
+//     </div>
+//   )
+// }
 
-function Chip2({name, onClick}) {
-  return (
-    <div>
-        <button className='second-chip' onClick={onClick}>{name}</button>
-    </div>
+// function Chip2({name, onClick}) {
+//   return (
+//     <div>
+//         <button className='second-chip' onClick={onClick}>{name}</button>
+//     </div>
     
-  )
-}
+//   )
+// }
 
 // No need for chip1 and chip2 components, buttons can also be used to display the genres.
 
