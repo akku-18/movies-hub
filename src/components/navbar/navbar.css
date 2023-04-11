@@ -52,4 +52,10 @@
         width: 50px;
         padding: 10px;
     }
+    .main{
+        margin-top: 20px;
+    }
+    .main a{
+        font-size: 13px;
+    }
 }

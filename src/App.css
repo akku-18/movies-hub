@@ -99,4 +99,10 @@
     .container{
         width: 80%;
     }
+    .page-title{
+        font-size: 20px;
+    }
+    .copyright{
+        font-size: 12px;
+    }
 }

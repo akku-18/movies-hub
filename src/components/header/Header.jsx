@@ -27,7 +27,7 @@ export default function Header() {
 
       {isAuthenticated ? (
         <button
-          className="genric-btn"
+          className="genric-btn" id="logout-btn"
           onClick={() =>
             logout({ logoutParams: { returnTo: window.location.origin } })
           }
@@ -37,7 +37,7 @@ export default function Header() {
         </button>
       ) : (
         <button
-          className="genric-btn"
+          className="genric-btn" id="login-btn"
           onClick={() => loginWithRedirect()}
           style={{ background: "green" }}
         >

@@ -23,7 +23,7 @@
 .button-71 {
   background-color: #0078d0;
   border: 0;
-  border-radius: 56px;
+  border-radius: 20px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -64,8 +64,17 @@
   justify-content: space-around;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1000px) {
   .button-71 {
-    padding: 16px 48px;
+    padding: 10px 15px;
+    flex: 1;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  .searchBox{
+    height: 20px;
+    flex: 6;
+    font-size: 15px;
+    margin-left: 10px;
   }
 }

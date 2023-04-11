@@ -42,11 +42,32 @@
   .main-title{
     font-size:4vw;
     margin-left: -70px;
+    text-transform: uppercase;
   }
   
   @media (max-width: 1000px) {
     .header {
       padding-top: 15px;
       font-size: 6.4vw;
+      padding-bottom: 0px;
+      margin-bottom: 10px;
+    }
+    .left-emofi{
+      width: 20px;
+    }
+    #login-btn, #logout-btn{
+      padding: 1px 5px;
+      font-size: 10px;
+      /* margin-bottom: 10px; */
+    }
+    .name{
+      font-size: 10px;
+    }
+    #username{
+      font-size: 10px;
+    }
+    .main-title{
+      margin-left: 0px;
+      font-size: 20px;
     }
   }
