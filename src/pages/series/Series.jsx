@@ -5,10 +5,11 @@ import Pagination from "../../components/pagination/Pagination";
 import "./series.css";
 import Genres from "../../components/genres/Genres";
 import useGenre from "../../hooks/useGenres";
+import Skeleton from "../../components/skeleton/Skeleton";
 
 
 export default function Series() {
-
+  const [loading, setLoading] = useState(true)
   const [content, setContent] = useState([]);
   const [currPage, setcurrPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(6);
@@ -23,6 +24,7 @@ export default function Series() {
     );
 
     setContent(data.results);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -46,6 +48,8 @@ export default function Series() {
       />
       <span className="current-page">{currPage}.</span>
       <div className="series">
+        {loading && <Skeleton cards={6} />  }
+        {!content && <Skeleton cards={6} />}
         {content &&
           currentPosts?.map((c) => {
             return (

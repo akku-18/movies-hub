@@ -5,8 +5,10 @@ import Pagination from "../../components/pagination/Pagination";
 import "./movies.css";
 import Genres from "../../components/genres/Genres";
 import useGenre from "../../hooks/useGenres";
+import Skeleton from "../../components/skeleton/Skeleton";
 
 export default function Movies() {
+  const [loading, setLoading] = useState(true)
   const [content, setContent] = useState([]);
   const [currPage, setcurrPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(6);
@@ -21,6 +23,7 @@ export default function Movies() {
     );
 
     setContent(data.results);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -43,6 +46,7 @@ export default function Movies() {
       />
       <span className="current-page">{currPage}.</span>
       <div className="movies">
+      {loading && <Skeleton cards={6} />  }
         {content &&
           currentPosts?.map((c) => {
             return (

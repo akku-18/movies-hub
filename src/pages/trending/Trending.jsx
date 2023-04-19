@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SingleContent from "../../components/singleContent/SingleContent";
 import "./trending.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import Pagination from "../../components/pagination/Pagination";
+import Skeleton from "../../components/skeleton/Skeleton";
 
 export default function Trending() {
+  const [loading, setLoading] = useState(true)
   const [content, setContent] = useState([]);
   const [currPage, setcurrPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(6); 
@@ -15,6 +18,7 @@ export default function Trending() {
     );
 
     setContent(data.results);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -30,6 +34,8 @@ export default function Trending() {
       <span className="page-title">Trending</span>
       <span className="current-page">{currPage}.</span>
       <div className="trending">
+        {loading && <Skeleton cards={6} />  }
+        
         {content &&
           currentPosts?.map((c) => {
             return (

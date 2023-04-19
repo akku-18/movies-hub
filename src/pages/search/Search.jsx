@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SingleContent from "../../components/singleContent/SingleContent";
 import Pagination from "../../components/pagination/Pagination";
+import Skeleton from "../../components/skeleton/Skeleton";
 
 export default function Search() {
+  const [loading, setLoading] = useState(true)
   const [type, setType] = useState(0);
   const [searchText, setSearchText] = useState("");
   const [content, setContent] = useState([]);
@@ -20,6 +22,7 @@ export default function Search() {
         }&language=en-US&query=${searchText}&include_adult=false` 
       );
       setContent(data.results);
+      
     } catch (error) {
       console.error(error);
     }
@@ -28,6 +31,7 @@ export default function Search() {
     window.scroll(0, 0);
     fetchSearch();
     setType(1)
+    setLoading(false);
     // eslint-disable-next-line
   }, [type]);
 
@@ -44,6 +48,7 @@ export default function Search() {
       </div>
 
       <div className="search">
+      {loading && <Skeleton cards={6} />  }
         {content &&
           currentPosts?.map((c) => {
             return (
