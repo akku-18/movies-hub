@@ -23,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 150px; */
   }
 
   .name{
@@ -52,14 +51,16 @@
       padding-bottom: 0px;
       margin-bottom: 10px;
     }
+    #username{
+      display: none;
+    }
     .left-emofi{
       width: 20px;
     }
     #login-btn, #logout-btn{
       padding: 0px 5px;
-      font-size: 10px;
+      font-size: 8px;
       height: 30px;
-      /* margin-bottom: 10px; */
     }
     .name{
       font-size: 10px;
