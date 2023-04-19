@@ -27,6 +27,7 @@ export default function Search() {
   useEffect(() => {
     window.scroll(0, 0);
     fetchSearch();
+    setType(1)
     // eslint-disable-next-line
   }, [type]);
 
