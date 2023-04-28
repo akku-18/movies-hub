@@ -15,9 +15,9 @@
     font-family: "Montserrat", sans-serif;
     cursor: pointer;
   }
-.media:hover{
+/* .media:hover{
   transform: scale(1.1);
-}
+} */
 
   .title, .subTitle {
     font-size: 16px;
