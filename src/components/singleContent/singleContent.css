@@ -14,10 +14,11 @@
     position: relative;
     font-family: "Montserrat", sans-serif;
     cursor: pointer;
+    transition: transform .2s;
   }
-/* .media:hover{
+.media:hover{
   transform: scale(1.1);
-} */
+}
 
   .title, .subTitle {
     font-size: 16px;
